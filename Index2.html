@@ -23,7 +23,7 @@
 <script>
 	var zombie_map;
 	var old_position;
-	var tolerance = 10;
+	var tolerance = 2000;
 	var score = 100;
 
 var data = `-33.32694307680141 115.63320982182256 hospital.png 
@@ -92,10 +92,10 @@ var marker = new google.maps.Marker({
 	});
 old_position = marker;
 	
-for (var i=0; i<all_markers.length; i++) {
+for (var i=0;i<all_markers.length; i++) {
 var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
 console.log(distance)
-if (distance < tolerance ) {
+if (distance<tolerance ) {
 	
 var what_is_it = all_markers[i].getIcon();
 what_is_it = what_is_it.replace(".png", "");
